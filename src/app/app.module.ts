@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
+import { ResaltarDirective } from './directives/resaltar.directive';
+import { ContarClicksDirective } from './directives/contar-clicks.directive';
 
 
 @NgModule({
   declarations: [ // agrega componentes
-    AppComponent
+    AppComponent,
+    ResaltarDirective,
+    ContarClicksDirective
   ],
   imports: [  // llama a los modulos a utilizae
     BrowserModule,
