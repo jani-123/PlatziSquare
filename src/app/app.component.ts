@@ -7,17 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PlatziSquare';
-  a = 3;
-  b = 5;
-  listo = false;
-  nombre:string = ''; // tipo a la variable
-
+  lugares:any = [
+    { active: true , nombre:'Floreria la Gardemia' },
+    { active: true , nombre: 'Donas La Caserita' },
+    { active: false , nombre: 'Veterinaria happyDog' },
+    { active: false , nombre: 'Floreria la Gardemia' },
+    { active: true , nombre: 'Donas La Caserita' },
+    { active: true , nombre: 'Veterinaria happyDog' },
+  ] // acepta cualquier tipo de objeto
   constructor() {
-    setTimeout(() => { //pasado 3 segundos se activa el boton
-      this.listo = true;
-    }, 3000)
+   
   }
-  hacerAlgo(){
-    alert('haciendo el curso de platzi'); // event binding
-  }
+ 
 }

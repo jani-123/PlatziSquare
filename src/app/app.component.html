@@ -1,19 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-  Bienvenido a {{ title }}! 
-  </h1>
-  <h2><p>String interpolation</p> {{a+b}}</h2>
-  <hr/>
-  <h2>Property Binding []</h2>
-  <button [disabled]="!listo" (click)="hacerAlgo()">Click</button>
-  <hr />
-  <h2>two way data binding</h2>
-  <input type="text" placeholder="tu nombre" [(ngModel)]="nombre"/>
-  <input type="text" placeholder="tu apellido" [(ngModel)]="apellido" />
-  <br/>
-  Mi nombre es {{nombre}} {{apellido}} 
-</div>
-
-
-
+<ul>
+  <ng-container *ngFor="let lugar of lugares">
+    <li *ngIf="lugar.active">{{lugar.nombre}}</li>
+  </ng-container>
+</ul>
