@@ -14,7 +14,10 @@ export class AppComponent {
     { active: false , nombre: 'Floreria la Gardemia' },
     { active: true , nombre: 'Donas La Caserita' },
     { active: true , nombre: 'Veterinaria happyDog' },
-  ] // acepta cualquier tipo de objeto
+  ]; // acepta cualquier tipo de objeto
+
+  lat: number = -16.4571485;
+  lng: number = -71.5307593;
   constructor() {
    
   }
