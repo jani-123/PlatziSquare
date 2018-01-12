@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { LugaresService } from '../services/lugares.service';
 
 @Component({
   selector: 'app-detalle',
@@ -17,15 +18,16 @@ export class DetalleComponent {
   ];
   id= null;
   lugar:any = {}; // objeto vacio
-  constructor(private route: ActivatedRoute){
+  constructor(private route: ActivatedRoute, private lugaresService:LugaresService){
     console.log(this.route.snapshot.params['id']);
     console.log(this.route.queryParams);
     console.log(this.route.snapshot.queryParams['actions2']);
     console.log(this.route.snapshot.queryParams['refare']);
     this.id = this.route.snapshot.params['id'];
-    this.lugar = this.buscarLugar();
-  }
-  buscarLugar(){
-    return this.lugares.filter((lugar) => { return lugar.id == this.id })[0] || null;
+    //this.lugar = this.lugaresService.buscarLugar(this.id);
+    this.lugaresService.buscarLugar(this.id)
+      .valueChanges().subscribe(lugar => {
+        this.lugar = lugar;
+      });
   }
 }

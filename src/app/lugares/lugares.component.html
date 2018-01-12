@@ -1,14 +1,22 @@
 <agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  <agm-marker *ngFor="let lugar of lugares" [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
 </agm-map>
 <hr />
 <div class="container">
   <div class="row">
     <div class="col-md-8">
       <h2>Lugare Cercanos</h2>
+      <a class="btn btn-primary" routerLink="/crear/new">Crear Nuevo Negocio</a>
       <ul class="list-group">
         <ng-container *ngFor="let lugar of lugares">
-          <a routerLink="/detalle/{{lugar.id}}" [queryParams]="{actions2:'edit',refare:'google'}"><li class="list-group-item" *ngIf="lugar.active">{{lugar.nombre}}</li></a>
+          <a routerLink="/crear/{{lugar.id}}" [queryParams]="{actions2:'edit',refare:'google'}">
+            <li class="list-group-item">{{lugar.nombre | uppercase}}
+              <br />
+              <small>Creado: {{lugar.id | date:'mediumTime' | uppercase}}</small><br />
+              {{'123458.343455' | number: '1.2-2'}}
+            </li>
+            
+          </a>
         </ng-container>
       </ul>
     </div>
