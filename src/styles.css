@@ -31,3 +31,15 @@
   margin-left: 5%;
   margin-top: 2%;
 }
+.navbar-inverse {
+    background-color: royalblue;
+    border-color: white;
+}
+.navbar {
+  border: 0px;
+}
+@media (min-width: 768px){ 
+.navbar {
+    border-radius: 0px;
+}
+}
