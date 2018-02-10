@@ -23,7 +23,7 @@ const appRoutes: Routes = [ // arreglo de rutas
   { path: 'contacto', component: ContactoComponent },
   { path: 'crear/:id', component: CrearComponent }
 ]
-export const firebaseConfig = {
+export const firebaseConfig = { // añadiendo firebase y conectando
     apiKey: "AIzaSyDZudGmo5hraVyFiH3zjIomtzyjOZ8IkxU",
     authDomain: "valued-watch-183001.firebaseapp.com",
     databaseURL: "https://valued-watch-183001.firebaseio.com",
