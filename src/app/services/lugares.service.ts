@@ -25,19 +25,19 @@ export class LugaresService {
           return data;
         })
   }
-  public buscarLugar(id) {
+  public buscarLugar(id) { // busca lugares del mapa de google
     //return this.lugares.filter((lugar) => { return lugar.id == id })[0] || null;
     return this.afDB.object('lugares/' + id);
   }
-  public guardarLugar(lugar){
+  public guardarLugar(lugar){// guarda la direccion que se encontro en el mapa
     //this.afDB.database.ref('lugares/'+ lugar.id).set(lugar);
     const headers = new Headers({"content-Type":"application/json"});
     return this.http.post(this.API_ENDPOINT+'/lugares.json', lugar,{headers:headers}).subscribe();
   }
-  public editarLugar(lugar) {
+  public editarLugar(lugar) {// podemos mover la direccion del mapa
     this.afDB.database.ref('lugares/' + lugar.id).set(lugar);
   }
-  public obtenerGeoData(direccion){
+  public obtenerGeoData(direccion){// obtiene geodata 
     //http://maps.google.com/maps/api/geocode/json?address=78-43+diagonal+70f,+Bogota,Colombia
     return this.http.get('http://maps.google.com/maps/api/geocode/json?address='+direccion)
   }
