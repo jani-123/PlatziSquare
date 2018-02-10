@@ -9,8 +9,8 @@ import { LugaresService } from '../services/lugares.service';
 export class LugaresComponent {
   title = 'PlatziSquare';
 
-  lat: number = -16.4571485;
-  lng: number = -71.5307593;
+  lat: number = -16.4571485; // latitud
+  lng: number = -71.5307593;// longitud del mapa
   lugares = null;
   constructor(private lugaresService: LugaresService) {
     //this.lugares = lugaresService.getLugares();
